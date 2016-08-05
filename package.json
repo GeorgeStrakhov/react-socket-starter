@@ -4,7 +4,7 @@
   "description": "simple boilerplate for real-time apps built with ES6, react, express and socket.io",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "dev": "gulp",
     "deploy": "git push heroku master"
   },
