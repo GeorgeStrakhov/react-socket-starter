@@ -1,6 +1,8 @@
 # React-Socket-Starter
 _simple boilerplate for full-stack real-time apps built with ES6, react, express and socket.io_
 
+See demo here: [http://react-socket-starter-demo.herokuapp.com/](http://react-socket-starter-demo.herokuapp.com/).
+
 ##What's included
 
 * ES6 on both Client and Server (via babel)
