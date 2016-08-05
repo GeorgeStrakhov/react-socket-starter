@@ -2,7 +2,7 @@
   "name": "react-socket-starter",
   "version": "0.0.1",
   "description": "simple boilerplate for real-time apps built with ES6, react, express and socket.io",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "gulp",

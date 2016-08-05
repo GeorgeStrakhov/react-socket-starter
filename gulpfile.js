@@ -12,7 +12,9 @@ var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 
 var dist = __dirname + '/public/';
-var src = __dirname + '/src/';
+var src = __dirname + '/src/client/';
+var srcServer = __dirname + '/src/server/';
+var distServer = __dirname + '/server/';
 
 //compile sources:sass
 gulp.task('sass',function(){  
@@ -62,7 +64,7 @@ function buildScript(file) {
 
 //compile sources:server
 gulp.task('prepare-server', function() {
-  return gulp.src('server/server.js')
+  return gulp.src(srcServer+'**/*.js')
     .pipe(plumber({
       handleError: function (err) {
         console.log(err);
@@ -72,7 +74,7 @@ gulp.task('prepare-server', function() {
     .pipe(babel({
       presets: ['es2015']
     }))
-  .pipe(gulp.dest('.'));
+  .pipe(gulp.dest(distServer));
 });
 
 //watch dest to trigger livereload AFTER compilation
@@ -96,7 +98,7 @@ gulp.task('watch', function() {
 	livereload.listen();
 	gulp.watch(src+'**/*.scss', ['sass']);
 	gulp.watch([src+'**/*.js', src+'**/*.jsx'], ['build-js']);
-  gulp.watch(['server/**/*.js', 'server/**/*.json'], ['prepare-server']);
+  gulp.watch([srcServer+'**/*.js', srcServer+'**/*.json'], ['prepare-server']);
 	gulp.watch(dist+'*.html', ['html']);
 	gulp.watch(dist+'*.css', ['css']);
 	gulp.watch(dist+'*.js', ['js']);
@@ -108,8 +110,8 @@ gulp.task('build', ['sass', 'build-js', 'prepare-server']);
 //server
 gulp.task('server',function(){  
     nodemon({
-        script: 'server.js',
-        watch: ['server.js']
+        script: distServer + 'server.js',
+        watch: [distServer]
     });
 });
 
