@@ -111,7 +111,7 @@ gulp.task('build', ['sass', 'build-js', 'prepare-server']);
 gulp.task('server',function(){  
     nodemon({
         script: distServer + 'server.js',
-        watch: [distServer]
+        watch: [distServer+'/']
     });
 });
 
