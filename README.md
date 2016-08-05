@@ -24,7 +24,7 @@ _simple boilerplate for full-stack real-time apps built with ES6, react, express
 * install heroku toolbelt
 * standard git stuff: `git init && git add -A && git commit -am "init" && git push`
 * `heroku create`
-* `heroku stack:set cedar-14 -a <app name>`
+* `heroku stack:set cedar-14`
 * `heroku features:enable http-session-affinity`
 * `npm run deploy`
 
