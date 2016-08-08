@@ -11,10 +11,10 @@ var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 
-var dist = __dirname + '/public/';
-var src = __dirname + '/src/client/';
-var srcServer = __dirname + '/src/server/';
-var distServer = __dirname + '/server/';
+var dist = 'public/';
+var src = 'src/client/';
+var srcServer = 'src/server/';
+var distServer = 'server/';
 
 //compile sources:sass
 gulp.task('sass',function(){  
